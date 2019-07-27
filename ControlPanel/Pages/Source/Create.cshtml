@@ -1,0 +1,64 @@
+﻿@page
+@model ControlPanel.Pages.Source.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ExceptionSource</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ExceptionSource.Name" class="control-label"></label>
+                <input asp-for="ExceptionSource.Name" class="form-control" />
+                <span asp-validation-for="ExceptionSource.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExceptionSource.Description" class="control-label"></label>
+                <input asp-for="ExceptionSource.Description" class="form-control" />
+                <span asp-validation-for="ExceptionSource.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExceptionSource.CreatedBy" class="control-label"></label>
+                <input asp-for="ExceptionSource.CreatedBy" class="form-control" />
+                <span asp-validation-for="ExceptionSource.CreatedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExceptionSource.CreatedDate" class="control-label"></label>
+                <input asp-for="ExceptionSource.CreatedDate" class="form-control" />
+                <span asp-validation-for="ExceptionSource.CreatedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExceptionSource.ModifiedBy" class="control-label"></label>
+                <input asp-for="ExceptionSource.ModifiedBy" class="form-control" />
+                <span asp-validation-for="ExceptionSource.ModifiedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExceptionSource.ModifiedDate" class="control-label"></label>
+                <input asp-for="ExceptionSource.ModifiedDate" class="form-control" />
+                <span asp-validation-for="ExceptionSource.ModifiedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ExceptionSource.IsDeleted" /> @Html.DisplayNameFor(model => model.ExceptionSource.IsDeleted))
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
